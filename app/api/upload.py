@@ -9,13 +9,14 @@ from app.services.rag_service import index_document
 from app.models.document import Document
 from app.services.gemini_service import extract_document_information
 from app.services.ocr_service import extract_text
+from app.services.pdf_service import pdf_to_images
 
 router = APIRouter(prefix="/documents", tags=["Documents"])
 
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-ALLOWED_EXTENSIONS = (".png", ".jpg", ".jpeg")
+ALLOWED_EXTENSIONS = (".png", ".jpg", ".jpeg", ".pdf")
 
 
 @router.post("/upload")
@@ -38,7 +39,21 @@ async def upload_document(
         shutil.copyfileobj(file.file, buffer)
 
     # OCR
-    ocr_text = extract_text(file_path)
+    if file.filename.lower().endswith(".pdf"):
+
+        pages = pdf_to_images(file_path)
+
+        full_text = ""
+
+        for page in pages:
+            full_text += extract_text(page)
+            full_text += "\n\n"
+
+        ocr_text = full_text
+
+    else:
+
+        ocr_text = extract_text(file_path)
 
     # AI Extraction
     ai_result = extract_document_information(ocr_text)
@@ -70,6 +85,7 @@ async def upload_document(
         "status": document.status,
         "ocr_text": document.extracted_text,
         "ai_data": document.ai_data,
+        "file_path": document.file_path,
     }
 
 
@@ -103,6 +119,8 @@ def get_document(document_id: int, db: Session = Depends(get_db)):
     return {
         "id": document.id,
         "filename": document.filename,
+        "file_path": document.file_path,
+        "status": document.status,
         "document_type": document.document_type,
         "ocr_text": document.extracted_text,
         "ai_data": document.ai_data,

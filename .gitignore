@@ -1,26 +1,16 @@
-# Virtual Environment
 venv/
+node_modules/
 
-# Python
+.env
+
 __pycache__/
 *.pyc
 
-# Environment Variables
-.env
-
-# Database
-*.db
-
-# Chroma Vector DB
+uploads/
 chroma_db/
 
-# Uploaded Files
-uploads/
+frontend/node_modules/
+frontend/dist/
 
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
+dist/
+build/

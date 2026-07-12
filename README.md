@@ -1,209 +1,256 @@
-# 📄 DocuMind AI
-
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
-![Google Gemini](https://img.shields.io/badge/Google-Gemini-4285F4)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-VectorDB-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
 
-An AI-powered document intelligence platform that extracts text from documents, understands their contents using Google Gemini AI, stores information in PostgreSQL, and allows users to ask natural language questions using Retrieval-Augmented Generation (RAG).
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
 
----
+![React](https://img.shields.io/badge/React-19-blue)
 
-## 🚀 Features
+![Vite](https://img.shields.io/badge/Vite-8-purple)
 
-- 📤 Upload invoice, passport, and image documents
-- 🔍 OCR using EasyOCR
-- 🤖 AI-powered document understanding with Google Gemini
-- 📑 Automatic document classification
-- 🗄️ PostgreSQL database storage
-- 🧠 Vector search using ChromaDB
-- 💬 Ask questions about uploaded documents
-- ⚡ FastAPI REST API
-- 📖 Interactive Swagger documentation
+![Gemini](https://img.shields.io/badge/Google-Gemini-orange)
 
----
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
 
-## 🏗️ Architecture
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-![DocuMind AI Architecture](architecture.png)
+# 🤖 DocuMind AI
 
-## 🛠️ Tech Stack
+### AI-Powered Document Intelligence System
 
-| Category | Technology |
-|----------|------------|
-| Backend | FastAPI |
-| Database | PostgreSQL |
-| ORM | SQLAlchemy |
-| OCR | EasyOCR |
-| AI | Google Gemini |
-| Vector Database | ChromaDB |
-| Embeddings | Sentence Transformers |
-| Language | Python 3 |
+Extract • Understand • Search • Chat with Documents
+
+**DocuMind AI** is an AI-powered Document Intelligence System that extracts information from images and PDFs using OCR and Google Gemini, stores structured data in PostgreSQL, indexes documents in ChromaDB for semantic retrieval, and allows users to chat with their documents using Retrieval-Augmented Generation (RAG).
 
 ---
 
-## 📂 Project Structure
+## 🎥 Demo
 
-```text
-DocuMind-AI/
+![](docs/demo.gif)
+
+## ✨ Features
+
+* 📄 Upload images (PNG, JPG, JPEG)
+* 📕 Upload PDF documents
+* 👁️ OCR text extraction using EasyOCR
+* 🤖 AI-powered document understanding with Google Gemini
+* 📊 Automatic structured data extraction
+* 💬 Chat with uploaded documents using RAG
+* 🗂️ Document management dashboard
+* 🔍 Search uploaded documents
+* 📜 Original document preview
+* ⚡ FastAPI REST API
+* ⚛️ Modern React frontend
+* 🗄️ PostgreSQL database
+* 🧠 ChromaDB vector database
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots inside the `docs/` folder.
+
+| Dashboard               | Upload               |
+| ----------------------- | -------------------- |
+| ![](docs/dashboard.png) | ![](docs/upload.png) |
+
+| Documents               | Details               |
+| ----------------------- | --------------------- |
+| ![](docs/documents.png) | ![](docs/details.png) |
+
+| AI Chat            |
+| ------------------ |
+| ![](docs/chat.png) |
+
+---
+
+# 🏗 Architecture
+
+![](architecture.png)
+
+---
+
+## 🚀 Key Highlights
+
+- AI-powered document understanding using Google Gemini
+- OCR support for images and PDF documents
+- Retrieval-Augmented Generation (RAG) with ChromaDB
+- Interactive AI chat for document-based questions
+- Responsive React frontend with modern UI
+- FastAPI REST backend with PostgreSQL
+
+# 🛠 Tech Stack
+
+## Frontend
+
+* React
+* Vite
+* React Router
+* Axios
+* Tailwind CSS
+* Lucide React
+
+## Backend
+
+* FastAPI
+* SQLAlchemy
+* PostgreSQL
+
+## AI & Machine Learning
+
+* Google Gemini
+* EasyOCR
+* ChromaDB
+* Sentence Transformers
+
+## File Processing
+
+* PyMuPDF
+* Pillow
+
+---
+
+# 📂 Project Structure
+
+```
+DocuMind-AI
 │
-├── app/
-│   ├── api/
-│   ├── database/
-│   ├── models/
-│   ├── services/
+├── app
+│   ├── api
+│   ├── database
+│   ├── models
+│   ├── services
 │   └── main.py
 │
-├── uploads/
-├── chroma_db/
+├── frontend
+│   ├── src
+│   ├── public
+│   └── package.json
+│
+├── uploads
+├── chroma_db
+├── architecture.png
 ├── requirements.txt
-├── create_tables.py
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### Clone the repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/huzaifa-ai-tech/DocuMind-AI.git
-
 cd DocuMind-AI
 ```
 
-### Create virtual environment
+---
+
+## Backend
+
+Create a virtual environment:
 
 ```bash
 python -m venv venv
 ```
 
-Windows
+Activate it:
+
+### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
-### Install dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Create a `.env` file
-
-```text
-DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost/documind_ai
-
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-```
-
-### Create database tables
-
-```bash
-python create_tables.py
-```
-
-### Run the API
+Run FastAPI:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Open:
+Backend URL:
 
 ```
-http://127.0.0.1:8000/docs
-```
-
----
-
-## 📌 API Endpoints
-
-### Upload Document
-
-```
-POST /documents/upload
-```
-
-### List Documents
-
-```
-GET /documents/
-```
-
-### Get Document
-
-```
-GET /documents/{id}
-```
-
-### Chat with Document
-
-```
-POST /documents/chat
+http://127.0.0.1:8000
 ```
 
 ---
 
-## 💬 Example Chat
+## Frontend
 
-### Question
-
-```json
-{
-  "document_id": 4,
-  "question": "Who is the vendor?"
-}
+```bash
+cd frontend
 ```
 
-### Response
+Install packages:
 
-```json
-{
-  "answer": "The vendor is East Repair Inc."
-}
+```bash
+npm install
+```
+
+Run Vite:
+
+```bash
+npm run dev
+```
+
+Frontend URL:
+
+```
+http://localhost:5173
 ```
 
 ---
 
-## 🔄 Workflow
+# 🔑 Environment Variables
 
-1. Upload a document
-2. EasyOCR extracts text
-3. Gemini extracts structured information
-4. Data is stored in PostgreSQL
-5. OCR text is converted into embeddings
-6. Embeddings are stored in ChromaDB
-7. User asks a question
-8. RAG retrieves relevant content
-9. Gemini generates the final answer
+Create a `.env` file in the project root.
 
----
+Example:
 
-## 🎯 Future Improvements
-
-- PDF support
-- Authentication
-- React frontend
-- Docker deployment
-- AWS deployment
-- Batch document processing
+```
+DATABASE_URL=your_database_url
+GEMINI_API_KEY=your_gemini_api_key
+```
 
 ---
 
-## 👨‍💻 Author
+# 🔄 Workflow
 
-**Huzaifa**
+1. User uploads an image or PDF.
+2. FastAPI stores the file.
+3. PDF pages are converted to images (if needed).
+4. EasyOCR extracts text.
+5. Google Gemini extracts structured information.
+6. Data is stored in PostgreSQL.
+7. OCR text is indexed in ChromaDB.
+8. Users chat with documents using RAG.
 
-Built using FastAPI, PostgreSQL, EasyOCR, Google Gemini, and ChromaDB.
+---
+
+# 📌 Future Improvements
+
+* User Authentication
+* Multi-user workspace
+* Export to CSV
+* Export to PDF
+* Docker support
+* Cloud deployment
+* Advanced analytics dashboard
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+Developed by **Huzaifa** as an AI-powered full-stack portfolio project.
