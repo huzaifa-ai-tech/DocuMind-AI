@@ -25,6 +25,10 @@ An AI-powered document intelligence platform that extracts text from documents, 
 
 ---
 
+## 🏗️ Architecture
+
+![DocuMind AI Architecture](architecture.png)
+
 ## 🛠️ Tech Stack
 
 | Category | Technology |
