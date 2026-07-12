@@ -60,7 +60,7 @@ DocuMind-AI/
 ### Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/DocuMind-AI.git
+git clone https://github.com/huzaifa-ai-tech/DocuMind-AI.git
 
 cd DocuMind-AI
 ```
