@@ -1,5 +1,12 @@
 # 📄 DocuMind AI
 
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini-4285F4)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-VectorDB-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 An AI-powered document intelligence platform that extracts text from documents, understands their contents using Google Gemini AI, stores information in PostgreSQL, and allows users to ask natural language questions using Retrieval-Augmented Generation (RAG).
 
 ---
