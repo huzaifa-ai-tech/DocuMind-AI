@@ -50,8 +50,6 @@ Extract • Understand • Search • Chat with Documents
 
 # 📸 Screenshots
 
-> Add screenshots inside the `docs/` folder.
-
 | Dashboard               | Upload               |
 | ----------------------- | -------------------- |
 | ![](docs/dashboard.png) | ![](docs/upload.png) |
