@@ -24,9 +24,9 @@ Extract • Understand • Search • Chat with Documents
 
 ## 🎥 Demo
 
-Click the image below to watch the demo.
+> **Note:** GitHub may not preview the demo video directly in the README.
 
-[![DocuMind AI Demo](docs/dashboard.png)](docs/demo.mp4)
+📥 **Download the full demo video:** [demo.mp4](docs/demo.mp4)
 
 ## ✨ Features
 
