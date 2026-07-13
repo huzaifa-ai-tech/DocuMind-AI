@@ -28,6 +28,8 @@ Extract • Understand • Search • Chat with Documents
 
 📥 **Download the full demo video:** [demo.mp4](docs/demo.mp4)
 
+---
+
 ## ✨ Features
 
 * 📄 Upload images (PNG, JPG, JPEG)
