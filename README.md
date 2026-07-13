@@ -24,7 +24,9 @@ Extract • Understand • Search • Chat with Documents
 
 ## 🎥 Demo
 
-![](docs/demo.gif)
+Click the image below to watch the demo.
+
+[![DocuMind AI Demo](docs/dashboard.png)](docs/demo.mp4)
 
 ## ✨ Features
 
