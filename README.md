@@ -372,7 +372,7 @@ Special thanks to the open-source community for providing these excellent tools.
 
 # ⚠️ Disclaimer
 
-This project is intended for educational and portfolio purposes. Performance may vary depending on hardware, camera quality, and environmental conditions.
+This project is intended for educational and portfolio purposes. AI-generated results and OCR extraction may not always be 100% accurate and should be verified before use in production environments.
 
 ---
 
