@@ -370,6 +370,12 @@ Special thanks to the open-source community for providing these excellent tools.
 
 ---
 
+# ⚠️ Disclaimer
+
+This project is intended for educational and portfolio purposes. Performance may vary depending on hardware, camera quality, and environmental conditions.
+
+---
+
 # 📄 License
 
 This project is licensed under the **MIT License**.
