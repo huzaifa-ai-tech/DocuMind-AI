@@ -1,106 +1,227 @@
-![Python](https://img.shields.io/badge/Python-3.11-blue)
+<div align="center">
 
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-
-![React](https://img.shields.io/badge/React-19-blue)
-
-![Vite](https://img.shields.io/badge/Vite-8-purple)
-
-![Gemini](https://img.shields.io/badge/Google-Gemini-orange)
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
-
-![License](https://img.shields.io/badge/License-MIT-yellow)
-
-# 🤖 DocuMind AI
+![DocuMind AI Hero](docs/hero.png)
 
 ### AI-Powered Document Intelligence System
 
-Extract • Understand • Search • Chat with Documents
+**Extract • Understand • Search • Chat with Documents**
 
-**DocuMind AI** is an AI-powered Document Intelligence System that extracts information from images and PDFs using OCR and Google Gemini, stores structured data in PostgreSQL, indexes documents in ChromaDB for semantic retrieval, and allows users to chat with their documents using Retrieval-Augmented Generation (RAG).
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge\&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?style=for-the-badge\&logo=fastapi)
+![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge\&logo=react)
+![Vite](https://img.shields.io/badge/Vite-8-purple?style=for-the-badge\&logo=vite)
+![Gemini](https://img.shields.io/badge/Google-Gemini-orange?style=for-the-badge)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge\&logo=postgresql)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/huzaifa-ai-tech/DocuMind-AI?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/huzaifa-ai-tech/DocuMind-AI?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/huzaifa-ai-tech/DocuMind-AI?style=for-the-badge)
+
+</div>
 
 ---
 
-## 🎥 Demo
+# 📌 Overview
 
-> **Note:** GitHub may not preview the demo video directly in the README.
+DocuMind AI is a modern **AI-powered Document Intelligence System** built with **FastAPI**, **React**, **Google Gemini**, **EasyOCR**, **PostgreSQL**, and **ChromaDB**.
 
-📥 **Download the full demo video:** [demo.mp4](docs/demo.mp4)
+The application automatically extracts text from images and PDF documents, understands document contents using AI, stores structured information in PostgreSQL, indexes documents in ChromaDB for semantic retrieval, and enables users to interact with their documents using **Retrieval-Augmented Generation (RAG)**.
+
+Designed with a clean full-stack architecture, DocuMind AI demonstrates practical implementation of OCR, Large Language Models, vector databases, semantic search, and modern AI-powered document analysis.
 
 ---
 
-## ✨ Features
+# 🚀 Key Features
 
-* 📄 Upload images (PNG, JPG, JPEG)
-* 📕 Upload PDF documents
-* 👁️ OCR text extraction using EasyOCR
-* 🤖 AI-powered document understanding with Google Gemini
-* 📊 Automatic structured data extraction
-* 💬 Chat with uploaded documents using RAG
-* 🗂️ Document management dashboard
-* 🔍 Search uploaded documents
-* 📜 Original document preview
-* ⚡ FastAPI REST API
-* ⚛️ Modern React frontend
-* 🗄️ PostgreSQL database
-* 🧠 ChromaDB vector database
+| Feature                   | Status |
+| ------------------------- | :----: |
+| Image Upload              |    ✅   |
+| PDF Upload                |    ✅   |
+| OCR Text Extraction       |    ✅   |
+| AI Information Extraction |    ✅   |
+| Original Document Preview |    ✅   |
+| Document Dashboard        |    ✅   |
+| AI Chat (RAG)             |    ✅   |
+| PostgreSQL Storage        |    ✅   |
+| ChromaDB Vector Search    |    ✅   |
+
+---
+
+# 🏗️ System Architecture
+
+![Architecture](architecture.png)
+
+---
+
+# 🎥 Demo
+
+> **GitHub may not preview videos directly inside the README.**
+
+📥 **Download the complete demo video**
+
+[demo.mp4](docs/demo.mp4)
 
 ---
 
 # 📸 Screenshots
 
-| Dashboard               | Upload               |
-| ----------------------- | -------------------- |
-| ![](docs/dashboard.png) | ![](docs/upload.png) |
+## Dashboard
 
-| Documents               | Details               |
-| ----------------------- | --------------------- |
-| ![](docs/documents.png) | ![](docs/details.png) |
+![](docs/dashboard.png)
 
-| AI Chat            |
-| ------------------ |
-| ![](docs/chat.png) |
+## Upload
+
+![](docs/upload.png)
+
+## Documents
+
+![](docs/documents.png)
+
+## Document Details
+
+![](docs/details.png)
+
+## AI Chat
+
+![](docs/chat.png)
 
 ---
 
-# 🏗 Architecture
+# ✨ Features
 
-![](architecture.png)
+## 📄 Document Upload
+
+* Upload PNG, JPG, JPEG images
+* Upload PDF documents
+* Drag & Drop support
+* Instant file preview
+* Fast document processing
 
 ---
 
-## 🚀 Key Highlights
+## 👁 OCR Extraction
 
-- AI-powered document understanding using Google Gemini
-- OCR support for images and PDF documents
-- Retrieval-Augmented Generation (RAG) with ChromaDB
-- Interactive AI chat for document-based questions
-- Responsive React frontend with modern UI
-- FastAPI REST backend with PostgreSQL
+* EasyOCR integration
+* Image OCR
+* PDF OCR
+* Multi-page PDF support
+* Accurate text extraction
 
-# 🛠 Tech Stack
+---
+
+## 🤖 AI Document Understanding
+
+* Google Gemini integration
+* Automatic document classification
+* Invoice information extraction
+* Passport information extraction
+* Structured JSON output
+
+---
+
+## 💬 AI Chat (RAG)
+
+* Retrieval-Augmented Generation
+* ChromaDB vector search
+* Semantic document retrieval
+* Natural language questions
+* Context-aware AI responses
+
+---
+
+## 📊 Document Dashboard
+
+* Upload history
+* Document search
+* Original document preview
+* OCR text viewer
+* AI extracted fields
+* Document details page
+
+---
+
+## 🗄️ Backend Services
+
+* FastAPI REST API
+* SQLAlchemy ORM
+* PostgreSQL database
+* ChromaDB vector database
+* Modular service architecture
+
+---
+
+# 📂 Project Structure
+
+```text
+DocuMind-AI/
+│
+├── app/
+│   ├── api/
+│   ├── database/
+│   ├── models/
+│   ├── services/
+│   └── main.py
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   └── package.json
+│
+├── docs/
+│   ├── dashboard.png
+│   ├── upload.png
+│   ├── documents.png
+│   ├── details.png
+│   ├── chat.png
+│   ├── hero.png
+│   └── demo.mp4
+│
+├── uploads/
+├── chroma_db/
+│
+├── architecture.png
+├── requirements.txt
+├── README.md
+└── .env.example
+```
+
+---
+
+# 💻 System Requirements
+
+* Python 3.11+
+* Node.js 20+
+* PostgreSQL
+* Google Gemini API Key
+
+---
+
+# 🛠 Technologies Used
 
 ## Frontend
 
 * React
 * Vite
+* Tailwind CSS
 * React Router
 * Axios
-* Tailwind CSS
 * Lucide React
 
 ## Backend
 
 * FastAPI
 * SQLAlchemy
-* PostgreSQL
+* Uvicorn
 
-## AI & Machine Learning
+## Database
+
+* PostgreSQL
+* ChromaDB
+
+## Artificial Intelligence
 
 * Google Gemini
 * EasyOCR
-* ChromaDB
 * Sentence Transformers
 
 ## File Processing
@@ -110,52 +231,27 @@ Extract • Understand • Search • Chat with Documents
 
 ---
 
-# 📂 Project Structure
-
-```
-DocuMind-AI
-│
-├── app
-│   ├── api
-│   ├── database
-│   ├── models
-│   ├── services
-│   └── main.py
-│
-├── frontend
-│   ├── src
-│   ├── public
-│   └── package.json
-│
-├── uploads
-├── chroma_db
-├── architecture.png
-├── requirements.txt
-└── README.md
-```
-
----
-
-# ⚙️ Installation
+# 📦 Installation
 
 ## Clone Repository
 
 ```bash
 git clone https://github.com/huzaifa-ai-tech/DocuMind-AI.git
+```
+
+Move into the project directory
+
+```bash
 cd DocuMind-AI
 ```
 
----
-
-## Backend
-
-Create a virtual environment:
+Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate it:
+Activate the environment
 
 ### Windows
 
@@ -163,45 +259,44 @@ Activate it:
 venv\Scripts\activate
 ```
 
-Install dependencies:
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run FastAPI:
+Install frontend dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+Run the backend
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Backend URL:
-
-```
-http://127.0.0.1:8000
-```
-
----
-
-## Frontend
-
-```bash
-cd frontend
-```
-
-Install packages:
-
-```bash
-npm install
-```
-
-Run Vite:
+Run the frontend
 
 ```bash
 npm run dev
 ```
 
-Frontend URL:
+Backend URL
+
+```
+http://127.0.0.1:8000
+```
+
+Frontend URL
 
 ```
 http://localhost:5173
@@ -209,50 +304,78 @@ http://localhost:5173
 
 ---
 
-# 🔑 Environment Variables
+# ▶ Usage
 
-Create a `.env` file in the project root.
-
-Example:
-
-```
-DATABASE_URL=your_database_url
-GEMINI_API_KEY=your_gemini_api_key
-```
+1. Start PostgreSQL.
+2. Launch the FastAPI backend.
+3. Start the React frontend.
+4. Upload an image or PDF.
+5. Extract document information using AI.
+6. View OCR results.
+7. Chat with the uploaded document.
 
 ---
 
 # 🔄 Workflow
 
-1. User uploads an image or PDF.
-2. FastAPI stores the file.
-3. PDF pages are converted to images (if needed).
-4. EasyOCR extracts text.
-5. Google Gemini extracts structured information.
-6. Data is stored in PostgreSQL.
-7. OCR text is indexed in ChromaDB.
-8. Users chat with documents using RAG.
+1. Upload Image / PDF
+2. OCR Text Extraction (EasyOCR)
+3. AI Information Extraction (Google Gemini)
+4. Store Structured Data (PostgreSQL)
+5. Create Vector Embeddings (ChromaDB)
+6. Ask Questions
+7. Retrieve Relevant Context
+8. Generate AI Response
 
 ---
 
-# 📌 Future Improvements
+# 🎯 Future Improvements
 
 * User Authentication
-* Multi-user workspace
-* Export to CSV
+* Multi-user Workspace
 * Export to PDF
-* Docker support
-* Cloud deployment
-* Advanced analytics dashboard
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
+* Export to CSV
+* Docker Support
+* Cloud Deployment
+* Multi-language OCR
+* Streaming AI Responses
+* Advanced Analytics Dashboard
 
 ---
 
 # 👨‍💻 Author
 
-Developed by **Huzaifa** as an AI-powered full-stack portfolio project.
+**Huzaifa**
+
+GitHub: https://github.com/huzaifa-ai-tech
+
+---
+
+# 🙏 Acknowledgements
+
+This project makes use of the following open-source technologies:
+
+* **Google Gemini** — AI document understanding
+* **FastAPI** — High-performance backend framework
+* **React** — Modern frontend framework
+* **EasyOCR** — Optical Character Recognition
+* **ChromaDB** — Vector database for semantic search
+* **PostgreSQL** — Relational database
+* **Sentence Transformers** — Embedding generation
+* **PyMuPDF** — PDF processing
+* **Pillow** — Image processing
+* **Python** — Core programming language
+
+Special thanks to the open-source community for providing these excellent tools.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a **⭐ Star** on GitHub. Your support helps the project reach more developers and motivates future improvements.
