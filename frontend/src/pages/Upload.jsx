@@ -1,0 +1,193 @@
+import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  UploadCloud,
+  FileImage,
+  X,
+  CheckCircle,
+  Eye,
+} from "lucide-react";
+import api from "../services/api";
+
+function Upload() {
+  const inputRef = useRef(null);
+
+  const [file, setFile] = useState(null);
+  const [dragging, setDragging] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [uploadedId, setUploadedId] = useState(null);
+
+  function handleFile(selectedFile) {
+    if (!selectedFile) return;
+
+    setFile(selectedFile);
+    setUploadedId(null);
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    setDragging(false);
+
+    if (e.dataTransfer.files.length > 0) {
+      handleFile(e.dataTransfer.files[0]);
+    }
+  }
+
+  async function uploadFile() {
+    if (!file) {
+      alert("Please select a file.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    setLoading(true);
+    setUploadedId(null);
+
+    try {
+      const response = await api.post("/documents/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      setUploadedId(response.data.id);
+
+      setFile(null);
+
+      if (inputRef.current) {
+        inputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("Upload Error:", error);
+
+      if (error.response) {
+        console.log("Status:", error.response.status);
+        console.log("Data:", error.response.data);
+        alert(JSON.stringify(error.response.data));
+      } else {
+        alert(error.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div className="max-w-4xl mx-auto">
+
+      <div className="bg-white rounded-3xl shadow-xl p-10">
+
+        <h1 className="text-4xl font-bold mb-2">
+          Upload Document
+        </h1>
+
+        <p className="text-gray-500 mb-8">
+          Upload invoices, passports or images and let AI analyze them.
+        </p>
+
+        <div
+          onClick={() => inputRef.current.click()}
+          onDragOver={(e) => {
+            e.preventDefault();
+            setDragging(true);
+          }}
+          onDragLeave={() => setDragging(false)}
+          onDrop={handleDrop}
+          className={`border-2 border-dashed rounded-2xl p-12 text-center cursor-pointer transition-all duration-300 ${
+            dragging
+              ? "border-indigo-600 bg-indigo-50"
+              : "border-gray-300 hover:border-indigo-500 hover:bg-gray-50"
+          }`}
+        >
+          <UploadCloud
+            size={70}
+            className="mx-auto text-indigo-600 mb-4"
+          />
+
+          <h2 className="text-2xl font-bold">
+            Drag & Drop your file
+          </h2>
+
+          <p className="text-gray-500 mt-2">
+            or click to browse
+          </p>
+
+          <input
+            ref={inputRef}
+            type="file"
+            className="hidden"
+            accept=".png,.jpg,.jpeg,.pdf"
+            onChange={(e) => handleFile(e.target.files[0])}
+          />
+        </div>
+
+        {file && (
+          <div className="mt-8 flex items-center justify-between bg-gray-100 rounded-xl p-5">
+
+            <div className="flex items-center gap-4">
+
+              <FileImage
+                size={40}
+                className="text-indigo-600"
+              />
+
+              <div>
+                <h3 className="font-bold">
+                  {file.name}
+                </h3>
+
+                <p className="text-gray-500">
+                  {(file.size / 1024).toFixed(2)} KB
+                </p>
+              </div>
+
+            </div>
+
+            <button
+              onClick={() => {
+                setFile(null);
+
+                if (inputRef.current) {
+                  inputRef.current.value = "";
+                }
+              }}
+            >
+              <X className="text-red-500 hover:text-red-700" />
+            </button>
+
+          </div>
+        )}
+
+        <button
+          onClick={uploadFile}
+          disabled={loading}
+          className="mt-8 w-full bg-gradient-to-r from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 text-white py-4 rounded-xl text-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+        >
+          {loading ? "Uploading..." : "Upload to AI"}
+        </button>
+
+        {uploadedId && (
+          <div className="mt-6 bg-green-100 text-green-700 rounded-xl p-4 flex items-center justify-between gap-3 flex-wrap">
+            <div className="flex items-center gap-3">
+              <CheckCircle />
+              Document uploaded successfully!
+            </div>
+            <Link
+              to={`/documents/${uploadedId}`}
+              className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition"
+            >
+              <Eye size={18} />
+              View Document
+            </Link>
+          </div>
+        )}
+
+      </div>
+
+    </div>
+  );
+}
+
+export default Upload;
